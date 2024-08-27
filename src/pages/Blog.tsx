@@ -13,7 +13,7 @@ export const Blog = () => {
 
     const backToBlogsButton = (
         <Link to={token ? "/blogs" : "/"}
-            className="fixed top-16 left-4 lg:left-10 text-white font-bold text-lg bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-500 py-2 px-4 rounded-lg shadow-lg transition-all flex items-center space-x-2 z-50"
+            className="fixed top-20 left-4 lg:left-10 text-white font-bold text-lg bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-500 py-2 px-4 rounded-lg shadow-lg transition-all flex items-center space-x-2 z-50"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
