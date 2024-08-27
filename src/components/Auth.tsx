@@ -4,6 +4,7 @@ import { LabelledInput } from "./LabelledInput";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { SignUpType, SignInType } from "@bharatsharma19/mediuminputparser";
+import { config } from "../hooks";
 
 // Sign Up Header
 const SignUpHeader = () => (
@@ -69,7 +70,10 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
         setIsLoading(true);
         try {
             await toast.promise(
-                axios.post(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/user/${type}`, (type === "signup") ? signUpInputs : signInInputs),
+                axios.post(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/user/${type}`,
+                    (type === "signup") ? signUpInputs : signInInputs,
+                    config
+                ),
                 {
                     loading: (type === "signup" ? "Registering..." : "Logging in..."),
                     success: (type === "signup" ? "Registration Successful" : "Login Successful"),

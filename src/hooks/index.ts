@@ -12,19 +12,22 @@ export interface Blog {
   createdAt: Date;
 }
 
+export const config = {
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem("token")}`,
+  },
+};
+
 export const useBlog = ({ id }: { id: string }) => {
   const [blog, setBlog] = useState<Blog>();
   const [loading, setLoading] = useState(true);
 
-  const config = {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  };
-
   const fetchBlog = useCallback(() => {
     axios
-      .get(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/blog/single/${id}`, config)
+      .get(
+        `${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/blog/single/${id}`,
+        config
+      )
       .then((response) => {
         setBlog(response.data.blog);
         setLoading(false);
@@ -48,12 +51,6 @@ export const useBlog = ({ id }: { id: string }) => {
 export const useUserBlogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  };
 
   const fetchBlogs = useCallback(() => {
     axios
@@ -84,7 +81,7 @@ export const useBlogs = () => {
 
   const fetchBlogs = useCallback(() => {
     axios
-      .get(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/blog/bulk`)
+      .get(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/blog/bulk`, config)
       .then((response) => {
         setBlogs(response.data.blogs);
         setLoading(false);

@@ -69,7 +69,7 @@ export const BlogCard = ({
 
     return (
         <div className="ml-auto mr-auto">
-            <div className="p-4 border-b-2 border-slate-200 cursor-pointer w-screen max-w-screen-lg">
+            <div className="p-4 border-b-2 border-slate-200 cursor-pointer w-screen max-w-screen-lg overflow-hidden">
                 <div className="flex justify-between">
                     <div className="flex items-center">
                         <Avatar name={authorName} />
