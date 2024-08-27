@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@bharatsharma19/mediuminputparser": "^2.0.2",
-    "@bharatsharma19/zodinputparser": "^1.0.4",
     "axios": "^1.7.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
