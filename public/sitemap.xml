@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>http://the-insight-hive.bharatsharma.co/</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Signup page -->
+    <url>
+        <loc>http://the-insight-hive.bharatsharma.co/signup</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Signin page -->
+    <url>
+        <loc>http://the-insight-hive.bharatsharma.co/signin</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blogs list page -->
+    <url>
+        <loc>http://the-insight-hive.bharatsharma.co/blogs</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact page -->
+    <url>
+        <loc>http://the-insight-hive.bharatsharma.co/contact</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Profile page -->
+    <url>
+        <loc>http://the-insight-hive.bharatsharma.co/profile</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blog posts (example URLs; adjust based on actual blog post URLs) -->
+    <!-- Make sure to dynamically generate these if you have many posts -->
+    <url>
+        <loc>http://the-insight-hive.bharatsharma.co/blog/*</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+  </url>
+</urlset>
