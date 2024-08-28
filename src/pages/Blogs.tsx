@@ -1,11 +1,24 @@
+import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { Appbar } from "../components/Appbar";
 import { BlogCard } from "../components/BlogCard";
 import { useUserBlogs } from "../hooks";
 import { NoBlogsFound } from "../components/NotFound";
+import { useNavigate } from "react-router-dom";
 
 export const Blogs = () => {
+    const nav = useNavigate();
+
     const { loading, blogs } = useUserBlogs();
+
+    useEffect(() => {
+        const name = localStorage.getItem("name");
+        const token = localStorage.getItem("token");
+
+        if (!token || !name) {
+            nav("/");
+        }
+    }, []);
 
     if (loading) {
         return (

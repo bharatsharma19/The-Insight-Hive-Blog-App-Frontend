@@ -20,15 +20,15 @@ export const Contact = () => {
                                 <FaEnvelope className="text-4xl text-red-500 mb-2 transition-transform transform group-hover:scale-125 group-hover:text-red-700 group-hover:rotate-12" />
                                 <span className="text-lg text-gray-600 group-hover:text-red-700">Email</span>
                             </a>
-                            <a href="https://www.linkedin.com/in/bharatsharma1909/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
+                            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
                                 <FaLinkedin className="text-4xl text-blue-700 mb-2 transition-transform transform group-hover:scale-125 group-hover:text-blue-900 group-hover:rotate-12" />
                                 <span className="text-lg text-gray-600 group-hover:text-blue-900">LinkedIn</span>
                             </a>
-                            <a href="https://github.com/bharatsharma19/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
+                            <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
                                 <FaGithub className="text-4xl text-gray-800 mb-2 transition-transform transform group-hover:scale-125 group-hover:text-black group-hover:rotate-12" />
                                 <span className="text-lg text-gray-600 group-hover:text-black">GitHub</span>
                             </a>
-                            <a href="https://bharatsharma.co/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
+                            <a href="https://your-portfolio-link.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
                                 <FaLink className="text-4xl text-green-500 mb-2 transition-transform transform group-hover:scale-125 group-hover:text-green-700 group-hover:rotate-12" />
                                 <span className="text-lg text-gray-600 group-hover:text-green-700">Portfolio</span>
                             </a>

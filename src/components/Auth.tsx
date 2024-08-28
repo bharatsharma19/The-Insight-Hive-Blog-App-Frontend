@@ -4,7 +4,7 @@ import { LabelledInput } from "./LabelledInput";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { SignUpType, SignInType } from "@bharatsharma19/mediuminputparser";
-import { config } from "../hooks";
+import { Appbar } from "./Appbar";
 
 // Sign Up Header
 const SignUpHeader = () => (
@@ -21,7 +21,7 @@ const SignUpHeader = () => (
 const SignInHeader = () => (
     <div className="text-center px-10">
         <div className="text-3xl font-extrabold">Login</div>
-        <div className="text-slate-500 text-center">
+        <div className="text-slate-500">
             Don't have an account?
             <Link to="/signup" className="pl-2 underline">Register</Link>
         </div>
@@ -72,7 +72,6 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             await toast.promise(
                 axios.post(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/user/${type}`,
                     (type === "signup") ? signUpInputs : signInInputs,
-                    config
                 ),
                 {
                     loading: (type === "signup" ? "Registering..." : "Logging in..."),
@@ -80,23 +79,23 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                     error: (type === "signup" ? "Registration Failed!" : "Login Failed!"),
                 }
             ).then((result) => {
-                // Access the JWT token from result.data.jwt
                 localStorage.setItem("token", result.data.jwt);
                 localStorage.setItem("name", result.data.name);
+            }).finally(() => {
+                navigate("/blogs");
             });
-
-            navigate("/blogs");
         } catch (error) {
-            // Handling errors is already managed by toast.promise
+            // Error handling already managed by toast.promise
         } finally {
             setIsLoading(false);
         }
     }
 
     return (
-        <div className="h-screen flex justify-center flex-col">
-            <div className="flex justify-center">
-                <div>
+        <div>
+            <Appbar />
+            <div className="flex justify-center items-center min-h-screen pt-24 px-4 md:px-0"> {/* Added margin-top for content */}
+                <div className="w-full max-w-md">
                     {type === "signup" ? (
                         <div>
                             <SignUpHeader />
@@ -119,8 +118,8 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                         </button>
                     </div>
                 </div>
+                <Toaster />
             </div>
-            <Toaster />
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useEffect, useState, useCallback } from "react";
 import toast from "react-hot-toast";
+import { useEffect, useState, useCallback } from "react";
 
 export interface Blog {
   id: string;
@@ -12,18 +12,22 @@ export interface Blog {
   createdAt: Date;
 }
 
-export const config = {
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
-  },
+const createConfig = () => {
+  return {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
 };
 
 export const useBlog = ({ id }: { id: string }) => {
   const [blog, setBlog] = useState<Blog>();
   const [loading, setLoading] = useState(true);
 
-  const fetchBlog = useCallback(() => {
-    axios
+  const fetchBlog = useCallback(async () => {
+    const config = createConfig();
+
+    await axios
       .get(
         `${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/blog/single/${id}`,
         config
@@ -52,8 +56,10 @@ export const useUserBlogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchBlogs = useCallback(() => {
-    axios
+  const fetchBlogs = useCallback(async () => {
+    const config = createConfig();
+
+    await axios
       .get(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/blog`, config)
       .then((response) => {
         setBlogs(response.data.blogs);
@@ -68,9 +74,14 @@ export const useUserBlogs = () => {
       });
   }, [import.meta.env.VITE_APP_BACKEND_URL]);
 
+  const name = localStorage.getItem("name");
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
-    fetchBlogs();
-  }, [fetchBlogs]);
+    if (token && name) {
+      fetchBlogs();
+    }
+  }, [fetchBlogs || name || token]);
 
   return { blogs, loading };
 };
@@ -79,8 +90,10 @@ export const useBlogs = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchBlogs = useCallback(() => {
-    axios
+  const fetchBlogs = useCallback(async () => {
+    const config = createConfig();
+
+    await axios
       .get(`${import.meta.env.VITE_APP_BACKEND_URL}/api/v1/blog/bulk`, config)
       .then((response) => {
         setBlogs(response.data.blogs);

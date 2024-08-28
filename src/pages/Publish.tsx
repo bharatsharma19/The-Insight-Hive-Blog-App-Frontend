@@ -1,11 +1,11 @@
-import { Appbar } from "../components/Appbar";
+import axios from "axios";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css'; // Import the styles
-import { CreatePostType } from "@bharatsharma19/mediuminputparser";
-import { toast, Toaster } from 'react-hot-toast';
+import { Appbar } from "../components/Appbar";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { toast, Toaster } from 'react-hot-toast';
+import { CreatePostType } from "@bharatsharma19/mediuminputparser";
 
 export const Publish = () => {
     const navigate = useNavigate();
