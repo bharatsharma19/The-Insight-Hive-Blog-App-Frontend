@@ -13,6 +13,14 @@ interface BlogCardProps {
     renderActions?: boolean
 }
 
+const descriptions = [
+    "(Click to explore the full article)",
+    "(Discover more details here)",
+    "(Uncover the full story)",
+    "(Find out more about this topic)",
+    "(Read the complete post)"
+];
+
 export const BlogCard = ({
     id,
     authorName,
@@ -23,6 +31,8 @@ export const BlogCard = ({
 }: BlogCardProps) => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const randomDescription = descriptions[Math.floor(Math.random() * descriptions.length)];
 
     const handleDelete = async () => {
         setIsModalOpen(false);
@@ -143,6 +153,8 @@ export const BlogCard = ({
                                 />
                             </svg>
                             Read More
+                            {/* Hidden but different for each render */}
+                            <span className="sr-only">{randomDescription}</span>
                         </Link>
                     </div>
                 </div>
