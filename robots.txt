@@ -1,7 +1,1 @@
-# robots.txt for http://the-insight-hive.bharatsharma.co/
 
-User-agent: *
-Disallow:
-
-# Specify the location of the sitemap
-Sitemap: http://the-insight-hive.bharatsharma.co/sitemap.xml
