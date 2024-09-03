@@ -133,7 +133,7 @@ export const BlogCard = ({
                 </Link>
                 <div className="pt-4 flex justify-between text-center">
                     <div className="text-slate-500 text-sm">
-                        {Math.ceil(content.length / 232)} Minute(s) Read
+                        {Math.ceil(content.length / 324)} Minute(s) Read
                     </div>
                     <div>
                         <Link
