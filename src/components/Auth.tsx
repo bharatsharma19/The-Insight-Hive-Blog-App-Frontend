@@ -31,19 +31,19 @@ const SignInHeader = () => (
 // Sign Up Form
 const SignUpForm = ({ postInputs, setPostInputs }: { postInputs: SignUpType; setPostInputs: (inputs: SignUpType) => void }) => (
     <div className="pt-4">
-        <LabelledInput label={"Username"} placeholder={"What Should we Call You?"} onChange={(e) => setPostInputs({ ...postInputs, username: e.target.value })} />
-        <LabelledInput label={"Name"} placeholder={"John Doe"} onChange={(e) => setPostInputs({ ...postInputs, name: e.target.value })} />
-        <LabelledInput label={"Email Address"} placeholder={"john.doe@gmail.com"} onChange={(e) => setPostInputs({ ...postInputs, email: e.target.value })} />
-        <LabelledInput label={"Contact Number"} placeholder={"1234567890"} onChange={(e) => setPostInputs({ ...postInputs, contact: e.target.value })} />
-        <LabelledInput type={"password"} label={"Password"} placeholder={"Password"} onChange={(e) => setPostInputs({ ...postInputs, password: e.target.value })} />
+        <LabelledInput label={"Username"} id={"username"} placeholder={"What Should we Call You?"} onChange={(e) => setPostInputs({ ...postInputs, username: e.target.value })} />
+        <LabelledInput label={"Name"} id={"name"} placeholder={"John Doe"} onChange={(e) => setPostInputs({ ...postInputs, name: e.target.value })} />
+        <LabelledInput label={"Email Address"} id={"email"} placeholder={"john.doe@gmail.com"} onChange={(e) => setPostInputs({ ...postInputs, email: e.target.value })} />
+        <LabelledInput label={"Contact Number"} id={"contact"} placeholder={"1234567890"} onChange={(e) => setPostInputs({ ...postInputs, contact: e.target.value })} />
+        <LabelledInput type={"password"} id={"password"} label={"Password"} placeholder={"Password"} onChange={(e) => setPostInputs({ ...postInputs, password: e.target.value })} />
     </div>
 );
 
 // Sign In Form
 const SignInForm = ({ postInputs, setPostInputs }: { postInputs: SignInType; setPostInputs: (inputs: SignInType) => void }) => (
     <div>
-        <LabelledInput label={"Email Address"} placeholder={"john.doe@gmail.com"} onChange={(e) => setPostInputs({ ...postInputs, email: e.target.value })} />
-        <LabelledInput type={"password"} label={"Password"} placeholder={"Password"} onChange={(e) => setPostInputs({ ...postInputs, password: e.target.value })} />
+        <LabelledInput label={"Email Address"} id={"email"} placeholder={"john.doe@gmail.com"} onChange={(e) => setPostInputs({ ...postInputs, email: e.target.value })} />
+        <LabelledInput type={"password"} id={"password"} label={"Password"} placeholder={"Password"} onChange={(e) => setPostInputs({ ...postInputs, password: e.target.value })} />
     </div>
 );
 
